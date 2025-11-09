@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Create tournament",
+      "method": "POST",
+      "body": {
+        "name": "Чемпионат по борьбе",
+        "weight_category": "до 75 кг",
+        "age_category": "18-25 лет",
+        "participants": ["Иванов И.", "Петров П.", "Сидоров С.", "Козлов К."]
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "tournament_id": "number",
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get all tournaments",
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "tournaments": "array"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
